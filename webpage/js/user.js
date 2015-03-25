@@ -1038,14 +1038,14 @@ function drawCalendar() {
 	var firstDay = new Date(calendarDate.getFullYear(), calendarDate.getMonth(), 1);
 	var lastDay = new Date(calendarDate.getFullYear(), calendarDate.getMonth() + 1, 0); // make sure it's not the end of NEXT month by using calendarDate.getMonth() + 1 
 
-	var numDays = new Date(calendarDate.getFullYear(), calendarDate.getMonth(), 0).getDate();
+	var numDays = new Date(calendarDate.getFullYear(), calendarDate.getMonth() + 1, 0).getDate();
 	var daysPerWeek = 7;
-	var startDay = date.getDay() +1;
+	var startDay = firstDay.getDay();
 	var boxController = {
 		y: 0,
 		x: startDay
 	};
-	var daysPassed = calendarDate.getDate() + 5;
+	var daysPassed = calendarDate.getDate();
 	var boxColor = calDim.passedColor;
 
 
